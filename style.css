@@ -1,0 +1,240 @@
+/* Maze in Space: the policy and support pages.
+   Colours from the game's palette (docs/visual-design-spec.md §2), Montserrat self-hosted
+   (SIL Open Font License, fonts/OFL.txt). No third-party requests of any kind. */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --void: #15122B;
+  --night: #241E45;
+  --dusk: #3B2F66;
+  --violet: #5F4B8F;
+  --lavender: #C9C2EE;
+  --cream: #FFF4E3;
+  --gold: #FFD35C;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--cream);
+  font-family: "Montserrat", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+/* Header: the wordmark links home, the page links sit under it. */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--dusk);
+  margin-bottom: 2rem;
+}
+
+.site-header .wordmark img {
+  display: block;
+  width: min(18rem, 80vw);
+  height: auto;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  color: var(--lavender);
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--cream);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--gold);
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 2.25rem 0 0.5rem;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 1.5rem 0 0.25rem;
+}
+
+p,
+ul {
+  margin: 0 0 1rem;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--gold);
+  text-underline-offset: 0.15em;
+  overflow-wrap: anywhere;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--cream);
+}
+
+strong {
+  font-weight: 500;
+}
+
+.lead {
+  font-size: 1.1rem;
+}
+
+.meta {
+  color: var(--lavender);
+  font-size: 0.9rem;
+}
+
+/* A notice banner (was the draft marker before Steffen's review, #94). */
+.draft {
+  background: var(--dusk);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.card {
+  background: var(--dusk);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.card p:last-child,
+.card ul:last-child {
+  margin-bottom: 0;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+}
+
+.hero img.icon {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 22%;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.links a {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--violet);
+  border-radius: 999px;
+  color: var(--cream);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--dusk);
+  color: var(--lavender);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--lavender);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
